@@ -13,3 +13,5 @@ class TaskList extends React.Component {
     return (allTasks)
   }
 }
+
+export default TaskList;
