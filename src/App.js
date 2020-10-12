@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Form from './components/Form'
+import Form from './components/Task'
+import Form from './components/TaskList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  addTaskToList = (e) => {
+    e.preventDefault();
+    let newTask = e.target.elements.task.value;
+    console.log(newTask);
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <TaskList />
+        <Form addTask={this.addTaskToList} />
+      </div>
+    );
+  }
+
 }
 
 export default App;
+
