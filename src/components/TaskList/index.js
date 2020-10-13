@@ -1,5 +1,6 @@
 import React from 'react';
 import Task from '../Task';
+import './style.css';
 
 class TaskList extends React.Component {
 
@@ -11,7 +12,9 @@ class TaskList extends React.Component {
       </li>
     )
 
-    return (allTasks)
+    return (
+      <ul className="task-list">{allTasks}</ul>
+    )
   }
 }
 
