@@ -1,0 +1,22 @@
+.task-list__li {
+  position: relative;
+  margin-left: 40px;
+  list-style: none;
+}
+
+.task-list__li::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -30px;
+  background-image: url(../../img/checkbox-blank-circle-outline.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+
+.task-list__li--active::before {
+  background-image: url(../../img/checkbox-marked-circle-outline.svg);
+}
