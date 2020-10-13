@@ -23,6 +23,8 @@ class App extends React.Component {
     this.setState({
       taskList: this.state.taskList.concat(newTask)
     })
+
+    e.target.elements.task.value = "";
   }
 
 
