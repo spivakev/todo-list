@@ -1,22 +1,35 @@
 import React from 'react';
 import Form from '../Form'
 import TaskList from '../TaskList'
-import taskList from '../../prevtasks'
+import prevtasks from '../../prevtasks'
 
 class App extends React.Component {
 
-  addTaskToList = (e) => {
-    e.preventDefault();
-    let newTask = e.target.elements.task.value;
-    console.log(newTask);
+  state = {
+    taskList: prevtasks
   }
 
-  // taskList = taskList.slice()
+  addTaskToList = (e) => {
+    e.preventDefault();
+    let newTaskText = e.target.elements.task.value;
+    console.log(newTaskText);
+
+    let newTask = {
+      id: Date.now(),
+      "text": newTaskText,
+      "done": false
+    }
+
+    this.setState({
+      taskList: this.state.taskList.concat(newTask)
+    })
+  }
+
 
   render() {
     return (
       <div className="App">
-        <TaskList tasks={taskList} />
+        <TaskList tasks={this.state.taskList} />
         <br />
         <br />
         <Form addTask={this.addTaskToList} />
