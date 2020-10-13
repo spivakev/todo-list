@@ -1,7 +1,6 @@
 .task-list__li {
   position: relative;
   margin-left: 40px;
-  list-style: none;
 }
 
 .task-list__li::before {
