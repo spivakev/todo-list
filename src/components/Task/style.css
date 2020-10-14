@@ -1,9 +1,8 @@
-.task-list__li {
-  position: relative;
-  margin-left: 40px;
+.task__checkbox {
+  display: none;
 }
 
-.task-list__li::before {
+.task__icon {
   content: "";
   position: absolute;
   top: 2px;
@@ -16,6 +15,19 @@
   height: 20px;
 }
 
-.task-list__li--active::before {
+.task__checkbox:checked + .task__icon {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
   background-image: url(../../img/checkbox-marked-circle-outline.svg);
+}
+
+.task__checkbox:checked ~ .task__text {
+  font-style: italic;
 }
