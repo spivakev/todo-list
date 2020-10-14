@@ -2,3 +2,42 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
 }
+
+.app__wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 318px;
+}
+
+.todo-list__container {
+  min-height: 365px;
+  max-height: 365px;
+}
+
+.todo-list__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-list__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 315px; /*TODO: добавить сетку bootstrap*/
+  max-height: 315px;
+  padding: 10px;
+}
+
+.todo-list__task-list {
+  flex: 1 0 auto;
+}
+
+.todo-list__input {
+  flex: 0 0 28px;
+}

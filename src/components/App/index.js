@@ -4,6 +4,7 @@ import TaskList from '../TaskList'
 import prevtasks from '../../prevtasks'
 import './style.css';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css'
+import DeleteIcon from '../../icons/DeleteIcon'
 
 class App extends React.Component {
 
@@ -36,11 +37,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
-        <TaskList tasks={this.state.taskList} />
-        <br />
-        <br />
-        <Form addTask={this.addTaskToList} />
+      <div className="app app__wrapper">
+        <div className="todo-list">
+          <div className="todo-list__container card">
+            <div className="todo-list__header card-header">
+              <span className="todo-list__title">TODO list</span>
+              <div className="todo-list__btn--delete">
+                <DeleteIcon />
+              </div>
+            </div>
+
+            <div className="todo-list__body">
+              <div className="todo-list__task-list">
+                <TaskList tasks={this.state.taskList} />
+              </div>
+              <div className="todo-list__input" >
+                <Form addTask={this.addTaskToList} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
